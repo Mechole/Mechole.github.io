@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(144, 233, 202);
+        transition: 0.5s;
+      }
+
+      .darkmode {
+        background-color: rgb(21, 55, 109);
+        transition: 0.5s;
+      }
+
+      .base {
+        padding: 40px;
+        margin: 5vh auto;
+        height: 80ch;
+        width: 55ch;
+        background-color: rgb(103, 153, 120);
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+
+      .darkmode .base {
+        background-color: rgb(43, 121, 174);
+        transition: 0.5s;
+      }
+
+      #display {
+        width: 15.4ch;
+        height: 3ch;
+        border-radius: 15px;
+        font-size: 50px;
+        background-color: rgb(170, 239, 217);
+        border: none;
+        transition: 0.5s;
+      }
+      .darkmode #display {
+        background-color: rgb(201, 243, 254);
+        transition: 0.5s;
+      }
+
+      #butt {
+        justify-content: space-around;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px 0;
+        margin: auto;
+        width: 55ch;
+        height: 70ch;
+      }
+
+      .darkmode #butt button {
+        border-color: rgb(7, 45, 168);
+        background-color: rgb(121, 193, 234);
+        padding: 20px;
+        font-size: 5ch;
+        width: 100px;
+        height: 100px;
+        border-style: solid;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+
+      .darkmode #butt .clear {
+        border-color: rgb(163, 13, 13);
+        color: aliceblue;
+        background-color: rgb(218, 96, 96);
+      }
+
+      #butt button {
+        border-color: rgb(21, 96, 21);
+        background-color: rgb(197, 250, 197);
+        padding: 20px;
+        font-size: 5ch;
+        width: 100px;
+        height: 100px;
+        border-style: solid;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+
+      #butt button:hover {
+        border-color: rgb(21, 96, 21);
+        transition: 0.4s;
+        cursor: pointer;
+        opacity: 50%;
+        padding: 20px;
+        font-size: 5ch;
+        width: 100px;
+        height: 100px;
+        border-style: solid;
+        border-radius: 50%;
+      }
+
+      .darkmode #butt button:hover {
+        border-color: rgb(7, 45, 168);
+        transition: 0.4s;
+        cursor: pointer;
+        opacity: 50%;
+        padding: 20px;
+        font-size: 5ch;
+        width: 100px;
+        height: 100px;
+        border-style: solid;
+        border-radius: 50%;
+      }
+
+      #butt .clear {
+        border-color: rgb(163, 13, 13);
+        color: aliceblue;
+        background-color: rgb(218, 96, 96);
+      }
+
+      #butt .clear:hover {
+        border-color: rgb(163, 13, 13);
+        color: aliceblue;
+        background-color: rgb(183, 59, 59);
+      }
+      .container {
+        position: relative;
+        margin-top: 35px;
+        margin-left: 30px;
+        border: 5px solid rgb(9, 105, 63);
+        border-radius: 50px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 5px;
+        width: 20ch;
+        height: 10ch;
+        display: flex;
+        transition: 0.5s;
+      }
+
+      .darkmode .container {
+        background-color: rgb(5, 67, 210);
+        border: 5px solid rgb(6, 12, 52);
+        transition: 0.5s;
+      }
+
+      .ball {
+        margin-top: -10px;
+        left: 75px;
+        background-color: rgb(13, 240, 195);
+        width: 11ch;
+        height: 11ch;
+        border-radius: 50%;
+        border: 5px solid rgb(9, 105, 63);
+        position: absolute;
+        transition: 0.5s;
+      }
+
+      .darkmode .ball {
+        background-color: rgb(85, 153, 243);
+        transform: translate(-85px);
+        border: 5px solid rgb(6, 12, 52);
+        transition: 0.5s;
+      }
+
+      .container i {
+        font-size: 7ch;
+      }
+      #sun {
+        margin-top: 7px;
+        margin-left: 14px;
+        width: 50ch;
+        color: rgb(230, 178, 9);
+      }
+
+      #moon {
+        margin-top: 8px;
+        margin-left: 8px;
+        margin-right: 4px;
+        width: 50ch;
+        color: aliceblue;
+      }
+
+      .linkers {
+        display: inline-block;
+      }
+      .logout {
+        margin-top: 10px;
+        margin-right: 10px;
+        float: right;
+        position: relative;
+        display: flex;
+      }
+
+      .logoutbut {
+        background-color: rgb(103, 153, 120);
+        width: 10ch;
+        height: 7vh;
+        font-size: 30px;
+        border-radius: 5ch;
+        border: none;
+        transition: 0.5s ease;
+      }
+
+      .logoutbut:hover {
+        background-color: rgb(139, 178, 152);
+        width: 10ch;
+        height: 7vh;
+        font-size: 30px;
+        border-radius: 5ch;
+        border: none;
+        transition: 0.5s ease;
+      }
+
+      .darkmode .logoutbut {
+        background-color: rgb(98, 114, 198);
+        width: 10ch;
+        height: 7vh;
+        font-size: 30px;
+        border-radius: 5ch;
+        border: none;
+        color: white;
+        transition: 0.5s ease;
+      }
+
+      .darkmode .logoutbut:hover {
+        background-color: rgb(18, 37, 86);
+        color: white;
+        transition: 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="linkers">
+      <div class="container">
+        <i class="bi bi-sun" id="sun"></i>
+        <i class="bi bi-moon-stars-fill" id="moon"></i>
+        <div class="ball" id="ball"></div>
+      </div>
+    </div>
+    <div class="logout">
+      <a href="login.html"><button class="logoutbut">Sign out</button></a>
+    </div>
+
+    <div class="base">
+      <input id="display" readonly="" />
+      <div id="butt">
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('*')">x</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('/')">/</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button class="clear" onclick="clearDisplay()">C</button>
+      </div>
+    </div>
+
+    <script>
+      var display = document.getElementById("display");
+      var body = document.querySelector("body");
+      var ball = document.querySelector(".ball");
+
+      ball.addEventListener("click", function () {
+        body.classList.toggle("darkmode");
+      });
+
+      function appendToDisplay(input) {
+        display.value += input;
+      }
+
+      function clearDisplay() {
+        display.value = "";
+      }
+
+      function calculate() {
+        display.value = eval(display.value);
+      }
+    </script>
+  </body>
+</html>
