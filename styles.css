@@ -87,6 +87,8 @@
 
       .icon {
         margin-right: 10px;
+        color: inherit;
+        text-decoration: none;
       }
 
       @media screen and (max-width: 768px) {
@@ -110,4 +112,9 @@
           width: 100%;
           margin: 5px 0;
         }
+
+      .icon {
+        color: inherit;
+        text-decoration: none;
+      }
       }
